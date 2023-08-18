@@ -1,0 +1,29 @@
+{
+  "name": "personal_portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start"
+  },
+  "description": "![Portfolio Website](https://i.ibb.co/WgPMpts/image.png)",
+  "main": "index.js",
+  "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-brands-svg-icons": "^6.1.1",
+    "@fortawesome/free-regular-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
+    "babel-plugin-macros": "^3.1.0",
+    "next": "^12.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "rsuite": "^5.6.6",
+    "styled-components": "^5.3.3",
+    "styled-normalize": "^8.0.7"
+  },
+  "author": "Matthew Martin",
+  "license": "ISC"
+}
