@@ -1,0 +1,14 @@
+.HeaderContainer {
+  backdrop-filter: blur(5px);
+  filter: none !important;
+  user-select: auto !important;
+}
+
+.Logo {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  a {
+    transition: 0.4s ease;
+  }
+}

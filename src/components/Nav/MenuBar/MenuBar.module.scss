@@ -1,0 +1,15 @@
+.MenuBarDropdownTrigger {
+	outline: inherit;
+
+  svg {
+    transform: rotate(0deg);
+    transition: all .25s ease-in-out;
+  }
+  
+  &[aria-expanded="true"] {
+    background: theme('colors.secondary.100');
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+}

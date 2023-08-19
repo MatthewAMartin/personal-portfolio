@@ -1,23 +1,5 @@
-import React from "react";
-import {
-  Section,
-  SectionDivider,
-  SectionText,
-  SectionTitle,
-} from "../../styles/GlobalComponents";
-import {
-  PageContainer,
-  ContentContainer,
-  ContentHeader,
-  Line,
-  TextContent,
-} from "./SkillsStyles";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  solid,
-  regular,
-  brands,
-} from "@fortawesome/fontawesome-svg-core/import.macro";
+import React from 'react';
+import { PageContainer, ContentContainer, TextContent } from './SkillsStyles';
 
 const Skills = () => (
   <PageContainer id="skills">

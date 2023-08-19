@@ -1,5 +1,5 @@
-import Document, { Head, Html, Main, NextScript } from "next/document";
-import { ServerStyleSheet } from "styled-components";
+import Document, { Head, Html, Main, NextScript } from 'next/document';
+import { ServerStyleSheet } from 'styled-components';
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -9,8 +9,7 @@ export default class MyDocument extends Document {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: (App) => (props) =>
-            sheet.collectStyles(<App {...props} />),
+          enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />),
         });
 
       const initialProps = await Document.getInitialProps(ctx);
@@ -31,14 +30,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en-GB">
         <Head>
-          <link
-            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Open+Sans:wght@300&display=swap"
-            rel="stylesheet"
-          />
-          <script
-            src="https://kit.fontawesome.com/1b7e488bc7.js"
-            crossOrigin="anonymous"
-          ></script>
+          <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
         </Head>
         <body>
           <Main />
