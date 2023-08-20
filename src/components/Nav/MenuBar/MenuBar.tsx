@@ -3,6 +3,7 @@ import { ChevronDown } from 'lucide-react';
 import { cn } from '../../../lib/utils';
 import { navConfig } from '../../../configs/navConfig';
 import React from 'react';
+import ContactDialog from '../../ContactDialog/ContactDialog';
 
 import styles from './MenuBar.module.scss';
 
@@ -61,9 +62,10 @@ export const MenuBar: React.FC = () => (
     </div>
 
     <div className="hidden lg:flex w-52 justify-end">
-      <button className="text-xs font-bold text-black hover:text-white outline outline-2 outline-primary hover:bg-primary py-2 px-4 rounded-full whitespace-nowrap transition">
-        Contact Me
-      </button>
+      <ContactDialog
+        triggerText="Contact Me"
+        triggerClassName="text-xs font-bold text-black hover:text-white outline outline-2 outline-primary hover:bg-primary flex justify-center items-center py-2 px-4 rounded-full whitespace-nowrap transition"
+      />
     </div>
   </>
 );

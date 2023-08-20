@@ -11,7 +11,7 @@ const Nav: React.FC = () => {
   return (
     <nav className={styles.HeaderContainer + ' flex items-center justify-between flex-wrap'}>
       <div className="container">
-        <div className="row flex flex-row px-5 lg:px-0 py-5 justify-between">
+        <div className="row flex flex-row py-5 justify-between">
           <div className="flex items-center flex-shrink-0 w-full lg:w-52 justify-between">
             <div className={styles.Logo}>
               <a href="/">

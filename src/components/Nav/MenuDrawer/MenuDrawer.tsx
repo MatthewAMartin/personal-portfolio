@@ -3,6 +3,9 @@ import { cn } from '../../../lib/utils';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '../../UI/Collapsible';
 import { navConfig } from '../../../configs/navConfig';
 import React, { Dispatch, SetStateAction } from 'react';
+import Button from '../../UI/Button';
+import ContactDialog from '../../ContactDialog/ContactDialog';
+import { Dialog, DialogPortal, DialogOverlay } from '../../UI/Dialog';
 
 import styles from './MenuDrawer.module.scss';
 
@@ -55,42 +58,41 @@ export const MenuDrawer: React.FC<{ open: boolean; setOpen: Dispatch<SetStateAct
   open,
   setOpen,
 }) => (
-  <Collapsible open={open}>
-    <CollapsibleContent className={cn(styles.CollapsibleContent, 'fixed lg:hidden top-0 left-0 w-screen h-screen')}>
-      <div className="w-full max-w-xs h-full bg-neutral-100 relative z-50">
-        <div className="mx-5 pt-6 pb-4 mb-2 border-b border-neutral-300 flex justify-between">
-          <div className={styles.Logo}>
-            <a href="/">
-              <h5 className="font-bold text-xl inline">Matthew Alexander</h5>
-              <span className="text-primary font-bold text-xl">.</span>
-            </a>
+  <Dialog open={open}>
+    <DialogPortal forceMount={true}>
+      <Collapsible open={open}>
+        <CollapsibleContent className={cn(styles.CollapsibleContent, 'fixed lg:hidden top-0 left-0 w-screen h-screen')}>
+          <div className="w-full sm:max-w-sm h-full bg-neutral-100 relative z-50 ">
+            <div className="mx-5 pt-6 pb-4 mb-2 border-b border-neutral-300 flex justify-between">
+              <div className={styles.Logo}>
+                <a href="/">
+                  <h5 className="font-bold text-xl inline">Matthew Alexander</h5>
+                  <span className="text-primary font-bold text-xl">.</span>
+                </a>
+              </div>
+              <CollapsibleTrigger onClick={() => setOpen(false)}>
+                <X />
+              </CollapsibleTrigger>
+            </div>
+            <div className="flex flex-col flex-grow items-start justify-start px-3">
+              {navConfig.map((link, index) =>
+                Array.isArray(link.url) ? (
+                  <DrawerDropdown key={`${link.name} NavItemDropdown ${index}`} name={link.name} url={link.url} />
+                ) : (
+                  <DrawerLink key={`${link.name} NavLink ${index}`} name={link.name} url={link.url} />
+                ),
+              )}
+            </div>
+            <div className="mt-4 flex mx-5 w-100">
+              <ContactDialog
+                triggerText="Contact Me"
+                triggerClassName="flex flex-grow justify-center font-bold text-black hover:text-white outline outline-2 outline-primary hover:bg-primary py-2 px-4 rounded-full whitespace-nowrap transition"
+              />
+            </div>
           </div>
-          <CollapsibleTrigger onClick={() => setOpen(false)}>
-            <X />
-          </CollapsibleTrigger>
-        </div>
-        <div className="flex flex-col flex-grow items-start justify-start px-3">
-          {navConfig.map((link, index) =>
-            Array.isArray(link.url) ? (
-              <DrawerDropdown key={`${link.name} NavItemDropdown ${index}`} name={link.name} url={link.url} />
-            ) : (
-              <DrawerLink key={`${link.name} NavLink ${index}`} name={link.name} url={link.url} />
-            ),
-          )}
-        </div>
-        <div className="mt-4 flex mx-5 w-100">
-          <button className="flex flex-grow justify-center font-bold text-black hover:text-white outline outline-2 outline-primary hover:bg-primary py-2 px-4 rounded-full whitespace-nowrap transition">
-            Contact Me
-          </button>
-        </div>
-      </div>
-      <div
-        className={cn(
-          open ? 'fixed' : 'hidden',
-          'top-0 left-0 w-screen h-screen bg-black opacity-80 backdrop-blur-2xl cursor-pointer z-40 lg:hidden',
-        )}
-        onClick={() => setOpen(false)}
-      ></div>
-    </CollapsibleContent>
-  </Collapsible>
+          <DialogOverlay className="z-40" onClick={() => setOpen(false)} />
+        </CollapsibleContent>
+      </Collapsible>
+    </DialogPortal>
+  </Dialog>
 );
