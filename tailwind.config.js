@@ -11,17 +11,18 @@ module.exports = {
         center: true,
       },
       fontFamily: {
-        sans: ['"Open Sans"', 'ui-sans-serif', 'system-ui'],
-        serif: ['ui-serif', 'Georgia'],
-        mono: ['ui-monospace', 'SFMono-Regular'],
-        display: ['Oswald'],
-        body: ['"Open Sans"'],
+        heading: ['"Lato"', 'sans-serif'],
+        body: ['"Lato"', 'sans-serif'],
       },
       fontSize: {
         xs: '14px',
-        sm: '14px',
-        base: '16px',
-        lg: '19px',
+        sm: '16px',
+        base: '18px',
+        lg: '28px',
+      },
+      lineHeight: {
+        body: '1.4',
+        heading: '1.2',
       },
       colors: {
         primary: {

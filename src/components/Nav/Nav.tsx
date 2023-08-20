@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { MenuBar } from './MenuBar/MenuBar';
 import { MenuDrawer } from './MenuDrawer/MenuDrawer';
+import { cn } from '../../lib/utils';
 
 import styles from './Nav.module.scss';
 
@@ -13,10 +14,11 @@ const Nav: React.FC = () => {
       <div className="container">
         <div className="row flex flex-row py-5 justify-between">
           <div className="flex items-center flex-shrink-0 w-full lg:w-52 justify-between">
-            <div className={styles.Logo}>
+            <div className={cn(styles.Logo, 'w-52')}>
               <a href="/">
-                <h5 className="font-bold text-xl inline">Matthew Alexander</h5>
-                <span className="text-primary font-bold text-xl">.</span>
+                <h4 className="inline">
+                  Matthew Alexander<span className="text-primary">.</span>
+                </h4>
               </a>
             </div>
             <div className="block lg:hidden">

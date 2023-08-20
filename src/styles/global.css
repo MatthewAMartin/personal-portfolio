@@ -1,6 +1,4 @@
-/* Tailwind base, components, and utilities styles */
-/* ... (contents of the tailwind styles) */
-
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -25,5 +23,41 @@
 } */
 
 body {
-  cursor: default;
+  font-family: theme('fontFamily.body');
+  font-size: theme('fontSize.base');
+  font-weight: theme('fontWeight.normal');
+  line-height: theme('lineHeight.body');
+  color: theme('colors.black');
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: theme('fontFamily.heading');
+  font-weight: theme('fontWeight.black');
+  line-height: theme('lineHeight.heading');
+  letter-spacing: theme('letterSpacing.tighter');
+}
+
+h1 {
+  font-size: 4.209rem;
+}
+
+h2 {
+  font-size: 3.157rem;
+}
+
+h3 {
+  font-size: 2.369rem;
+}
+
+h4 {
+  font-size: 1.777rem;
+}
+
+h5 {
+  font-size: 1.333rem;
 }

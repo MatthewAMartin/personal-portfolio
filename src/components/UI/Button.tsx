@@ -4,7 +4,7 @@ import { cn } from '../../lib/utils';
 type ButtonType = 'button' | 'submit' | 'reset';
 
 interface ButtonProps {
-  className: string;
+  className?: string;
   type?: ButtonType;
   onClick?: () => void;
   children: ReactNode;
@@ -16,7 +16,10 @@ const Button: React.FC<ButtonProps> = ({ className, type = 'button', onClick, di
     type={type}
     disabled={disabled}
     onClick={onClick && onClick}
-    className={cn('flex justify-center items-center py-2 px-4 rounded-full whitespace-nowrap transition', className)}
+    className={cn(
+      'flex justify-center items-center py-2 px-4 rounded-full whitespace-nowrap transition font-bold',
+      className,
+    )}
   >
     {children}
   </button>

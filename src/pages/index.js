@@ -1,7 +1,12 @@
 import { Layout } from '../layout/Layout';
+import Home from '../components/Home/Home';
 
-const Home = () => {
-  return <Layout></Layout>;
+const index = () => {
+  return (
+    <Layout metaTitle="Matthew Martin | Personal Portfolio" metaDescription="...">
+      <Home />
+    </Layout>
+  );
 };
 
-export default Home;
+export default index;
