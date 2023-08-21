@@ -2,7 +2,6 @@ import React from 'react';
 import { useState } from 'react';
 import { MenuBar } from './MenuBar/MenuBar';
 import { MenuDrawer } from './MenuDrawer/MenuDrawer';
-import { cn } from '../../lib/utils';
 
 import styles from './Nav.module.scss';
 
@@ -10,13 +9,13 @@ const Nav: React.FC = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className={styles.HeaderContainer + ' flex items-center justify-between flex-wrap'}>
+    <nav className={styles.HeaderContainer + ' flex items-center justify-between flex-wrap fixed top-0 left-0 right-0'}>
       <div className="container">
         <div className="row flex flex-row py-5 justify-between">
           <div className="flex items-center flex-shrink-0 w-full lg:w-52 justify-between">
-            <div className={cn(styles.Logo, 'w-52')}>
+            <div className="w-52">
               <a href="/">
-                <h4 className="inline">
+                <h4 className="block leading-6">
                   Matthew Alexander<span className="text-primary">.</span>
                 </h4>
               </a>

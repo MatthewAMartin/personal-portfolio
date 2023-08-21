@@ -1,43 +1,30 @@
 export const navConfig = [
   {
-    name: "Home",
-    url: "/",
+    name: 'Home',
+    url: '/',
   },
   {
-    name: "About",
-    url: "/",
+    name: 'About',
+    url: '/',
   },
   {
-    name: "Projects",
+    name: 'Projects',
+    url: '/projects',
+  },
+  {
+    name: 'Learning',
     url: [
       {
-        name: "Dealer Studio",
-        url: "/",
+        name: 'Data Structures & Algorithms',
+        url: '/',
       },
       {
-        name: "Time Tracer",
-        url: "/",
+        name: 'User Interface & User Experience Design',
+        url: '/',
       },
       {
-        name: "Other",
-        url: "/",
-      },
-    ],
-  },
-  {
-    name: "Learning",
-    url: [
-      {
-        name: "Data Structures & Algorithms",
-        url: "/",
-      },
-      {
-        name: "User Interface & User Experience Design",
-        url: "/",
-      },
-      {
-        name: "C++ & Unreal Engine",
-        url: "/",
+        name: 'C++ & Unreal Engine',
+        url: '/',
       },
     ],
   },

@@ -19,10 +19,7 @@ interface MenuBarDropdownProps {
 }
 
 export const DrawerLink: React.FC<DrawerLinkProps> = ({ name, url }) => (
-  <a
-    href={url}
-    className={cn(styles.NavLink, 'block lg:inline-block font-bold hover:bg-secondary-100 rounded mt-1 p-2 w-full')}
-  >
+  <a href={url} className="block lg:inline-block font-bold hover:bg-secondary-100 rounded mt-1 p-2 w-full">
     {name}
   </a>
 );
@@ -31,7 +28,7 @@ export const DrawerDropdown: React.FC<MenuBarDropdownProps> = ({ name, url }) =>
   <Collapsible className="w-full">
     <CollapsibleTrigger
       className={cn(
-        styles.NavLinkDropdownTrigger,
+        styles.MenuBarDropdownTrigger,
         'flex flex-row w-full items-center font-bold hover:bg-secondary-100 rounded p-2 mt-1 transition',
       )}
     >
@@ -63,9 +60,9 @@ export const MenuDrawer: React.FC<{ open: boolean; setOpen: Dispatch<SetStateAct
         <CollapsibleContent className={cn(styles.CollapsibleContent, 'fixed lg:hidden top-0 left-0 w-screen h-screen')}>
           <div className="w-full sm:max-w-sm h-full bg-neutral-100 relative z-50">
             <div className="mx-5 pt-5 pb-4 mb-2 border-b border-neutral-300 flex justify-between">
-              <div className={cn(styles.Logo, 'w-52')}>
+              <div className="w-52">
                 <a href="/">
-                  <h4 className="inline">
+                  <h4 className="block leading-6">
                     Matthew Alexander<span className="text-primary">.</span>
                   </h4>
                 </a>
@@ -86,7 +83,7 @@ export const MenuDrawer: React.FC<{ open: boolean; setOpen: Dispatch<SetStateAct
             <div className="mt-4 flex mx-5 w-100">
               <ContactDialog
                 triggerText="Contact Me"
-                triggerClassName="flex flex-grow justify-center font-bold text-black hover:text-white outline outline-2 outline-primary hover:bg-primary py-2 px-4 rounded-full whitespace-nowrap transition"
+                triggerClassName="flex flex-grow justify-center font-bold text-black hover:text-white border border-primary hover:bg-primary py-2 px-4 rounded-full whitespace-nowrap transition"
               />
             </div>
           </div>

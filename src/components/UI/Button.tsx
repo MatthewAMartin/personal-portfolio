@@ -9,20 +9,27 @@ interface ButtonProps {
   onClick?: () => void;
   children: ReactNode;
   disabled?: boolean;
+  href?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ className, type = 'button', onClick, disabled = false, children }) => (
-  <button
-    type={type}
-    disabled={disabled}
-    onClick={onClick && onClick}
-    className={cn(
-      'flex justify-center items-center py-2 px-4 rounded-full whitespace-nowrap transition font-bold',
-      className,
-    )}
-  >
-    {children}
-  </button>
-);
+const Button: React.FC<ButtonProps> = ({ className, type = 'button', onClick, disabled = false, href, children }) =>
+  href ? (
+    <a
+      type="button"
+      href={href && href}
+      className={cn('py-2 px-4 rounded-full whitespace-nowrap transition font-bold', className)}
+    >
+      {children}
+    </a>
+  ) : (
+    <button
+      type={type}
+      disabled={disabled}
+      onClick={onClick && onClick}
+      className={cn('py-2 px-4 rounded-full whitespace-nowrap transition font-bold', className)}
+    >
+      {children}
+    </button>
+  );
 
 export default Button;

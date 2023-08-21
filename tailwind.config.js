@@ -24,6 +24,9 @@ module.exports = {
         body: '1.4',
         heading: '1.2',
       },
+      borderWidth: {
+        DEFAULT: '2px',
+      },
       colors: {
         primary: {
           DEFAULT: '#00CDA1',
@@ -52,6 +55,20 @@ module.exports = {
           800: '#6D280A',
           900: '#3A1505',
           950: '#200C03',
+        },
+        accent: {
+          DEFAULT: '#6E91FF',
+          50: '#FFFFFF',
+          100: '#FFFFFF',
+          200: '#E8EEFF',
+          300: '#C0CFFF',
+          400: '#97B0FF',
+          500: '#6E91FF',
+          600: '#3666FF',
+          700: '#003DFD',
+          800: '#002FC5',
+          900: '#00228D',
+          950: '#001B71',
         },
       },
     },

@@ -64,7 +64,7 @@ export const MenuBar: React.FC = () => (
     <div className="hidden lg:flex items-center justify-end w-52">
       <ContactDialog
         triggerText="Contact Me"
-        triggerClassName="font-bold text-black hover:text-white outline outline-2 outline-primary hover:bg-primary flex justify-center items-center py-2 px-8 rounded-full whitespace-nowrap transition"
+        triggerClassName="font-bold text-black hover:text-white border border-primary hover:bg-primary flex justify-center items-center py-2 px-8 rounded-full whitespace-nowrap transition"
       />
     </div>
   </>
